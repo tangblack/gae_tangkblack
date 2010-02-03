@@ -10,7 +10,8 @@ class MainPage(webapp.RequestHandler):
         self.response.out.write('Hello, webapp World!')
 
 
-application = webapp.WSGIApplication([('/', MainPage)], debug=True)
+application = webapp.WSGIApplication([('/', MainPage)], 
+                                     debug=True)
 
 
 def main():
