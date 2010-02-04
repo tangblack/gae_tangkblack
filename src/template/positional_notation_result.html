@@ -1,12 +1,30 @@
 {% extends "layout.html" %}
 
 {% block content %}
-	<div class="result">
-		<div class="binary_result">binary : {{binary}}</div>
-		<div class="octal_result">octal : {{octal}}</div>
-		<div class="decimal_result">decimal : {{decimal}}</div>
-		<div class="hexadecimal_result">hexadecimal : {{hexadecimal}}</div>
-	</div>
-	<p><a href="/positional_notation">Back</a></p>
-	<p>Ref : <a href="http://en.wikipedia.org/wiki/Positional_notation">http://en.wikipedia.org/wiki/Positional_notation</a> </p>
+<table border="0">
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+		<td>Binary : </td>
+		<td>{{binary}}</td>
+    </tr>
+    <tr>
+		<td>Octal : </td>
+		<td>{{octal}}</td>
+    </tr>
+	<tr>
+		<td>Decimal : </td>
+		<td>{{decimal}}</td>
+    </tr>
+	<tr>
+		<td>Hexadecimal : </td>
+		<td>{{hexadecimal}}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+  </tfoot>
+</table>
+<p><a href="/positional_notation">Back</a></p>
+<p>Ref : <a href="http://en.wikipedia.org/wiki/Positional_notation">http://en.wikipedia.org/wiki/Positional_notation</a> </p>
 {% endblock%}

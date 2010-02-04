@@ -1,25 +1,42 @@
 {% extends "layout.html" %}
 
 {% block content %}
-	<form name="input" action="positional_notation" method="post">
-		<label>Binary : </label>
-		<input type="text" name="binary" />
-		<input type="submit" value="Submit" />
-	</form>
-	<form name="input" action="positional_notation" method="post">
-		<label>Octal : </label>
-		<input type="text" name="octal" />
-		<input type="submit" value="Submit" />
-	</form> 
-	<form name="input" action="positional_notation" method="post">
-		<label>Decimal : </label>
-		<input type="text" name="decimal" />
-		<input type="submit" value="Submit" />
-	</form> 
-	<form name="input" action="positional_notation" method="post">
-		<label>Hexadecimal : </label>
-		<input type="text" name="hexadecimal" />
-		<input type="submit" value="Submit" />
-	</form> 
-	<p>Ref : <a href="http://en.wikipedia.org/wiki/Positional_notation">http://en.wikipedia.org/wiki/Positional_notation</a> </p>
+<table border="0">
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+		<form name="input" action="positional_notation" method="post">
+      		<td><label>Binary : </label></td>
+      		<td><input type="text" name="binary" /></td>
+      		<td><input type="submit" value="Submit" /></td>
+		</form>
+    </tr>
+    <tr>
+		<form name="input" action="positional_notation" method="post">
+      		<td><label>Octal : </label></td>
+      		<td><input type="text" name="octal" /></td>
+      		<td><input type="submit" value="Submit" /></td>
+		</form>
+    </tr>
+	<tr>
+		<form name="input" action="positional_notation" method="post">
+      		<td><label>Decimal : </label></td>
+      		<td><input type="text" name="decimal" /></td>
+      		<td><input type="submit" value="Submit" /></td>
+		</form>
+    </tr>
+	<tr>
+		<form name="input" action="positional_notation" method="post">
+      		<td><label>Hexadecimal : </label></td>
+      		<td><input type="text" name="hexadecimal" /></td>
+      		<td><input type="submit" value="Submit" /></td>
+		</form>
+    </tr>
+  </tbody>
+  <tfoot>
+  </tfoot>
+</table>
+
+<p>Ref : <a href="http://en.wikipedia.org/wiki/Positional_notation">http://en.wikipedia.org/wiki/Positional_notation</a> </p>
 {% endblock%}
