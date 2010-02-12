@@ -1,4 +1,3 @@
-import positional_notation
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 
@@ -10,8 +9,7 @@ class MainPage(webapp.RequestHandler):
 #        self.response.out.write('Hello, webapp World!')
 
 
-application = webapp.WSGIApplication([('/', MainPage),
-                                      ('/positional_notation', positional_notation.PositionalNotationPage)],
+application = webapp.WSGIApplication([('/', MainPage)],
                                      debug=True)
 
 

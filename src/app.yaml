@@ -4,11 +4,25 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /template/.*
-  static_dir: /template
-  
 - url: /stylesheets
   static_dir: stylesheets
+  
+- url: /store/admin.*
+  script: store.py
+  login: admin
+  
+- url: /store/product/.+/buy
+  script: store.py
+  login: required
+  
+- url: /store
+  script: store.py 
+ 
+- url: /store/.*
+  script: store.py
+  
+- url: /positional_notation
+  script: positional_notation.py
   
 - url: /.*
   script: main.py

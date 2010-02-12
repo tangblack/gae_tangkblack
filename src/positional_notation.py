@@ -1,10 +1,11 @@
 import util
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
+from google.appengine.ext.webapp.util import run_wsgi_app
 
 class PositionalNotationPage(webapp.RequestHandler):
     def get(self):
-        content = template.render('template/positional_notation.html', {})
+        content = template.render('./template/positional_notation/positional_notation.html', {})
         self.response.out.write(content)
         
     def post(self):
@@ -32,7 +33,7 @@ class PositionalNotationPage(webapp.RequestHandler):
             octal = oct(value)
             decimal = value
             hexadecimal = hex(value)
-            content = template.render('template/positional_notation_result.html', 
+            content = template.render('./template/positional_notation/positional_notation_result.html', 
                                                 {'binary' : binary,
                                                  'octal' : octal,
                                                  'decimal' : decimal,
@@ -40,3 +41,14 @@ class PositionalNotationPage(webapp.RequestHandler):
             self.response.out.write(content)
         except:
             self.redirect('/positional_notation')
+            
+    
+application = webapp.WSGIApplication([('/positional_notation', PositionalNotationPage)],
+                                     debug=True)
+
+
+def main():
+    run_wsgi_app(application)
+
+if __name__ == "__main__":
+    main()
