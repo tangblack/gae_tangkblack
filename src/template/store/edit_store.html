@@ -4,11 +4,11 @@
 <form method="post" action="/store/admin/edit_store">
 	<fieldset>
 		<p>
-			<label>名稱：</label><br/>
+			<label>名稱：</label>
 			<input type="text" name="name" size="30" {% if store %} value="{{store.name}}"{% endif %}>
 		</p>
 		<p>
-			<label>敘述：</label><br/>
+			<label>敘述：</label>
 			<input type="text" name="description" size="40" {% if store %} value="{{store.description}}"{% endif %}>
 		</p>
 		<p><input class="button" type="submit" value="儲存"></p>
