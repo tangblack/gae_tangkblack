@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>管理員介面</h2>
+<h3>賣場</h3>
+{% if store %}<p><a href="/store/admin/edit_store">修改賣場內容</a>{% else %}<a href="/store/admin/init_store">開啟</a></p>{% endif %}
+<h3>商品</h3>
+<p><a href="/store/admin/product?action=create">新增商品</a></p>
+{% if products %}
+	<table>
+		<thead>
+			<tr>
+				<th>商品名稱</th>
+				<th>價格</th>
+				<th>修改</th>
+				<th>刪除</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for product in products %}
+			<tr>
+				<td><a href="/store/product/{{product.key}}">{{product.name}}</a></td>
+				<td>{{product.price}}</td>
+				<td><a href="/store/admin/product?action=update&amp;key={{product.key}}">修改</a></td>
+				<td><a href="/store/admin/product?action=delete&amp;key={{product.key}}">刪除</a></td>
+			</tr>
+		{% endfor %}
+		</tbody>
+		<tfoot>
+		</tfoot>
+	</table>
+{% else %}
+還沒有商品
+{% endif %}
+{% endblock %}

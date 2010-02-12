@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{% if store %}{{store.name}}{% else %}賣場尚未開啟{% endif %}</title>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/store/CoolWater.css" />
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">{% include 'header.html' %}</div><!-- header -->
+			<div  id="menu">{% include 'menu.html' %}</div><!-- menu -->
+			<div id="content-wrap">
+				<div id="main">{% block content %}{% endblock %}</div><!-- main -->
+				<div id="sidebar">{% include 'sidebar.html' %}</div><!-- sidebar -->
+			</div><!-- content-wrap -->
+			<div id="footer">{% include 'footer.html' %}</div><!-- footer -->
+		</div><!-- wrap -->
+	</body>
+</html> 

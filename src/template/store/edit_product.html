@@ -1,0 +1,38 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+<h2>商品內容</h2>
+<form method="post" action="/store/admin/product">
+	<fieldset>
+		<!-- /store/admin/product?action=save -->
+		<input type="hidden" name="action" value="save">
+		<!-- <input type="hidden" name="status" value={{status}}>  -->
+		{% if product %}
+			<input type="hidden" name="key" value={{product.key}}>
+		{% endif %}
+		<p>
+			<label>名稱：</label>
+			<input type="text" name="name" size="50" {% if product %} value="{{product.name}}"{% endif %}>
+		</p>
+		<p>
+			<label>售價：</label>
+			<input type="text" name="price" size="15" {% if product %} value="{{product.price}}"{% endif %}>
+		</p>
+		<p>
+			<label>內容：</label>
+			<textarea name="content" rows="10" cols="30">{% if product %}{{product.content}}{% endif %}</textarea>
+		</p>
+		<p>
+			<label>是否隱藏：</label>
+			{% if product %}
+				<input type=radio name="hide" value="0" {% if not product.hide %}checked{% endif %}>顯示
+				<input type=radio name="hide" value="1" {% if product.hide %}checked{% endif %}>隱藏
+			{% else %}
+				<input type=radio name="hide" value="0" checked>顯示
+				<input type=radio name="hide" value="1">隱藏
+			{% endif %}
+		</p>
+		<p><input class="button" type="submit" value="儲存"></p>
+	</fieldset>
+</form>
+{% endblock %}

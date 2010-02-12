@@ -1,0 +1,47 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+	<h2>{{product.name}}</h2>
+	<p>售價：<strong>{{product.price}}元</strong> <a href="/store/product/{{product.key}}/buy">我要購買</a></p>
+	<p>{{product.content}}</p>
+	
+	<div id="gfc">
+	<!-- Include the Google Friend Connect javascript library. -->
+<script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
+<!-- Define the div tag where the gadget will be inserted. -->
+<div id="div-2590076361881928395" style="margin:10px;width:525px;border:1px solid #E5F0FB;"></div>
+<!-- Render the gadget into a div. -->
+<script type="text/javascript">
+var skin = {};
+skin['BORDER_COLOR'] = '#E5F0FB';
+skin['ENDCAP_BG_COLOR'] = '#F4F8FD';
+skin['ENDCAP_TEXT_COLOR'] = '#333333';
+skin['ENDCAP_LINK_COLOR'] = '#0000cc';
+skin['ALTERNATE_BG_COLOR'] = '#ffffff';
+skin['CONTENT_BG_COLOR'] = '#ffffff';
+skin['CONTENT_LINK_COLOR'] = '#0000cc';
+skin['CONTENT_TEXT_COLOR'] = '#333333';
+skin['CONTENT_SECONDARY_LINK_COLOR'] = '#7777cc';
+skin['CONTENT_SECONDARY_TEXT_COLOR'] = '#666666';
+skin['CONTENT_HEADLINE_COLOR'] = '#333333';
+skin['DEFAULT_COMMENT_TEXT'] = '- \u8acb\u5728\u6b64\u5beb\u4e0b\u554f\u984c -';
+skin['HEADER_TEXT'] = '\u554f\u8207\u7b54';
+skin['POSTS_PER_PAGE'] = '15';
+google.friendconnect.container.setParentUrl('/' /* location of rpc_relay.html and canvas.html */);
+google.friendconnect.container.renderWallGadget(
+ { id: 'div-2590076361881928395',
+   site: '17693732604988359118',
+   'view-params':{"disableMinMax":"true","scope":"PAGE","startMaximized":"true"}
+ },
+  skin);
+</script>
+	</div>
+	
+	<div id="link_within">
+	<script>
+var linkwithin_site_id = 147911;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+<a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts with Thumbnails" style="border: 0" /></a>
+	</div>
+{% endblock %}

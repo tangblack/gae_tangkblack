@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>全部商品</h2>
+<blockquote>
+	<p>奇摩拍賣跟露天拍賣都要收費，反正我東西擺上面賣好久也賣不出去，乾脆擺自己家裡賣好了！</p>
+</blockquote>
+{% if products %}
+	<table width="510">
+		<thead>
+			<tr>
+				<th>商品名稱</th>
+				<th>價格</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for product in products %}
+			{% if not product.hide %}
+			<tr>
+				<td><a href="/store/product/{{product.key}}">{{product.name}}</a></td>
+				<td>{{product.price}}</td>
+			</tr>
+			{% endif %}
+			{% endfor %}
+		</tbody>
+		<tfoot>
+		</tfoot>
+	</table>
+{% else %}
+還沒有商品
+{% endif %}
+{% endblock %}

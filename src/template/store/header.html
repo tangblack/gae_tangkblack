@@ -1,0 +1,6 @@
+{% if store %}
+	<h1 id="logo-text"><a href="/store">{{store.name}}</a></h1>
+	<p id="slogan">{{store.description}}</p>
+{% else %}
+	<h1 id="logo-text"><a href="/store">賣場尚未開啟</a></h1>
+{% endif %}
