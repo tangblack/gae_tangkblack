@@ -1,11 +1,15 @@
 {% extends 'layout.html'%}
 
 {% block content %}
-	<h2>{{product.name}}</h2>
-	<p>售價：<strong>{{product.price}}元</strong> <a href="/store/product/{{product.key}}/buy">我要購買</a></p>
-	<p>{{product.content}}</p>
+<blockquote>
+	<p>{{store.declaration}}</p>
+</blockquote>
+
+<h2>{{product.name}}</h2>
+<p>售價：<strong>{{product.price}}元</strong> <a href="/store/product/{{product.key}}/buy">我要購買</a></p>
+<p>{{product.content}}</p>
 	
-	<div id="gfc">
+<div id="gfc">
 	<!-- Include the Google Friend Connect javascript library. -->
 <script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
 <!-- Define the div tag where the gadget will be inserted. -->
@@ -35,13 +39,13 @@ google.friendconnect.container.renderWallGadget(
  },
   skin);
 </script>
-	</div>
+</div>
 	
-	<div id="link_within">
+<div id="link_within">
 	<script>
 var linkwithin_site_id = 147911;
 </script>
 <script src="http://www.linkwithin.com/widget.js"></script>
 <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts with Thumbnails" style="border: 0" /></a>
-	</div>
+</div>
 {% endblock %}

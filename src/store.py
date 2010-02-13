@@ -97,7 +97,8 @@ class AdminInitStorePage(webapp.RequestHandler):
         if store is None:
             store = Store(key_name=STORE_KEY,
                                 name='My Store',
-                                description='This is my store')
+                                description='This is my store',
+                                declaration='Write your declaration')
             store.put()
             memcache.delete(STORE_KEY)
             memcache.set(STORE_KEY, store)
@@ -117,7 +118,7 @@ class AdminEditStorePage(webapp.RequestHandler):
     def post(self):
         name = self.request.get('name')
         description = self.request.get('description')
-        self.response.out.write(name)
+        declaration = cgi.escape(self.request.get('declaration'))
         
         store = get_store()
         if store is None:
@@ -125,6 +126,7 @@ class AdminEditStorePage(webapp.RequestHandler):
         else:
             store.name = name
             store.description = description
+            store.declaration = declaration
             store.put()
             memcache.delete(STORE_KEY)
             memcache.set(STORE_KEY, store)

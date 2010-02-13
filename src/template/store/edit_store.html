@@ -11,6 +11,10 @@
 			<label>敘述：</label>
 			<input type="text" name="description" size="40" {% if store %} value="{{store.description}}"{% endif %}>
 		</p>
+		<p>
+			<label>公告：</label>
+			<textarea name="declaration" rows="10" cols="30">{% if store %}{{store.declaration}}{% endif %}</textarea>
+		</p>
 		<p><input class="button" type="submit" value="儲存"></p>
 	</fieldset>
 </form>

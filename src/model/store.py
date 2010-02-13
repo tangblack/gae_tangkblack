@@ -3,6 +3,7 @@ from google.appengine.ext import db
 class Store(db.Model):
     name = db.StringProperty(required=True)
     description = db.StringProperty(required=True, default='')
+    declaration = db.TextProperty(required=True, default=db.Text('')) 
     
 
 class Product(db.Model):

@@ -3,7 +3,7 @@
 {% block content %}
 <h2>管理員介面</h2>
 <h3>賣場</h3>
-{% if store %}<p><a href="/store/admin/edit_store">修改賣場內容</a>{% else %}<a href="/store/admin/init_store">開啟</a></p>{% endif %}
+<p>{% if store %}<a href="/store/admin/edit_store">修改賣場內容</a>{% else %}<a href="/store/admin/init_store">開啟</a>{% endif %}</p>
 <h3>商品</h3>
 <p><a href="/store/admin/product?action=create">新增商品</a></p>
 {% if products %}
@@ -30,6 +30,6 @@
 		</tfoot>
 	</table>
 {% else %}
-還沒有商品
+<p>還沒有商品</p>
 {% endif %}
 {% endblock %}
